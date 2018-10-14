@@ -1,0 +1,23 @@
+<import src="post-item/post-item-template.wxml"/>
+<view>
+<!-- vertical="true" 竖直翻页-->
+  <swiper indicator-dots='true' autoplay='true' interval='1000' catchtap="onSwiperTap" >
+      <swiper-item >
+        <image src='/img/mm4.jpg' data-postId="2"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src='/img/mm5.jpg' data-postId="4"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src='/img/mm6.jpg' data-postId="3"></image>
+      </swiper-item> 
+  </swiper>
+  <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx" wx:key="item">
+  <!-- //template //item代表所有数组元素的子对象,子元素是js对象,...把对象展开平铺了-->
+  <view catchtap='onPostTap' data-postId="{{item.postId}}">
+  <template is="postItem" data="{{...item}}" ></template>
+  </view>
+  </block>
+  
+  
+</view>

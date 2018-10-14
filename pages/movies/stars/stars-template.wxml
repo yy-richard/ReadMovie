@@ -1,0 +1,17 @@
+<template name="starsTemplate">
+  <view class="star-container">
+    <view class='stars'>
+    <!-- 如果是半颗星的话,可以用2来表示[1,1,1,2,0],3星半 -->
+      <block wx:for="{{stars}}" wx:for-item="i">
+        <image wx:if="{{i}}" src="/img/collected.png"></image>
+        <image wx:else src="/img/collect.png"></image>
+      </block>
+      <!-- <image src="/img/collected.png"></image>
+      <image src="/img/collected.png"></image>
+      <image src="/img/collected.png"></image>
+      <image src="/img/collected.png"></image>
+      <image src="/img/collected.png"></image> -->
+    </view>
+    <text class='star-score'>{{score}}</text>
+  </view>
+</template>
